@@ -2,10 +2,16 @@ undef = "undefined";
 func = "function";
 
 $ = function (query) {
+	if (typeof query == "object") return query;
 	return document.querySelectorAll(query);
 };
 
+Object.prototype.find = function(query) {
+	return this[0].querySelectorAll(query);
+}
+
 Object.prototype.loE = function(fn) {
+	if (typeof this.length==="undefined") fn(this, 0);
 	for (var i=0;i<this.length;i++)
 		fn(this[i], i);
 }

@@ -26,5 +26,5 @@ $.get = function(url, completed, dataType) {
 }
 
 $.json = function(url, completed) {
-	return $.ajax("POST", url, undefined, completed, undefined, "json");
+	return $.ajax("GET", url, undefined, completed, undefined, "json");
 }

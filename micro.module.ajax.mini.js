@@ -1,2 +1,2 @@
 $.ajax=function(b,c,d,e,g,f){f=typeof f===undef?"text":f;var a=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("Microsoft.XMLHTTP");a.onreadystatechange=function(){4==a.readyState&&(200==a.status?typeof e===func&&e("json"==f?JSON.parse(a.responseText):a.responseText):typeof g===func&&g(a.status,a.statusText))};a.open(b,c,!0);return typeof d!=undef?a.send(d):a.send()};$.post=function(b,c,d,e){return $.ajax("POST",b,c,d,void 0,e)};
-$.get=function(b,c,d){return $.ajax("POST",b,void 0,c,void 0,d)};$.json=function(b,c){return $.ajax("POST",b,void 0,c,void 0,"json")};
+$.get=function(b,c,d){return $.ajax("POST",b,void 0,c,void 0,d)};$.json=function(b,c){return $.ajax("GET",b,void 0,c,void 0,"json")};
