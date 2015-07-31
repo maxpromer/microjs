@@ -1,6 +1,6 @@
 Object.prototype.submit = function(fn){
-	if (typeof fn === "function") {
-		this.loE(function(el)){
+	if (typeof fn === func) {
+		this.loE(function(el){
 			el.onsubmit = fn;
 		});
 	} else
@@ -9,7 +9,7 @@ Object.prototype.submit = function(fn){
 }
 
 Object.prototype.val = function(n) {
-	if (typeof n === "undefined")
+	if (typeof n === undef)
 		return this[0].value;
 	else {
 		this.loE(function(el) {

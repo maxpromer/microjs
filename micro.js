@@ -1,4 +1,7 @@
-var $ = function (query) {
+undef = "undefined";
+func = "function";
+
+$ = function (query) {
 	return document.querySelectorAll(query);
 };
 
@@ -22,13 +25,15 @@ Object.prototype.show = function() {
 };
 
 Object.prototype.css = function(property, style) {
+	if (typeof property == "string" && typeof style === undef)
+		return this[0].style[property];
 	this.loE(function(ei, i) {
 		if (typeof property == "string") {
-			eval('this[' + i + '].style.' + property + ' = \'' + style + '\'');
+			this[i]['style'][property] = style;
 		} else if (typeof property == "object") {
 			for (var key in property) {
 				if (property.hasOwnProperty(key))
-					eval('this[' + i + '].style.' + key + ' = \'' + property[key] + '\'');
+					this[i].style[key] = property[key];
 			}
 		}
 	});
@@ -36,7 +41,7 @@ Object.prototype.css = function(property, style) {
 };
 
 Object.prototype.html = function(n) {
-	if (typeof n === "undefined")
+	if (typeof n === undef)
 		return this[0].innerHTML;
 	else {
 		this.loE(function(el) {
@@ -47,7 +52,7 @@ Object.prototype.html = function(n) {
 }
 
 Object.prototype.text = function(n) {
-	if (typeof n === "undefined")
+	if (typeof n === undef)
 		return this[0].innerText;
 	else {
 		this.loE(function(el) {
@@ -55,6 +60,13 @@ Object.prototype.text = function(n) {
 		});
 	}
 	return this;
+}
+
+Object.prototype.remove = function() {
+	this.loE(function(el) {
+		el.removeChild(el);
+	});
+	return true;
 }
 
 Object.prototype.on = function(e, fn) {
@@ -65,7 +77,7 @@ Object.prototype.on = function(e, fn) {
 }
 
 Object.prototype.attr = function(n,v) {
-	if (typeof v !== "undefined"){
+	if (typeof v !== undef){
 		this.loE(function(el) {
 			el.setAttribute(n, v);
 		});
@@ -73,3 +85,12 @@ Object.prototype.attr = function(n,v) {
 	} else 
 		return this[0].getAttribute(n);
 }
+
+Object.prototype.removeAttr = function(n) {
+	this.loE(function(el) {
+		el.removeAttribute(n);
+	});
+	return this;
+}
+
+microjs = true;

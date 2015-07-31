@@ -1,0 +1,1 @@
+Object.prototype.submit=function(a){typeof a===func?this.loE(function(b){b.onsubmit=a}):el.submit();return this};Object.prototype.val=function(a){if(typeof a===undef)return this[0].value;this.loE(function(b){b.value=a});return this};Object.prototype.click=function(a){this.on("click",a);return this};Object.prototype.serialize=function(){return new FormData(this[0])};
