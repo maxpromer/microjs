@@ -6,9 +6,11 @@
 - $(query) - CSS selectors
 - Object.hide() - ซ่อนอิลิเมนต์
 - Object.show() - แสดงอิลิเมนต์
-- Object.css(property, style) - เซ็ตค่า Style
+- Object.css(property, style) - เซ็ตค่าสไตล์
 - Object.html() - ดึงโค้ดออกมาจากอิลิเมนต์
 - Object.html(code) - เซ็ตโค้ดในอิลิเมนต์
 - Object.text() - ดึงข้อความออกมาจากอิลิเมนต์ (โค้ด HTML จะถูกตัดทิ้ง)
 - Object.text(text) - เซ็ตข้อความในอิลิเมนต์
 - Object.on(event, handler) - more...
+- Object.attr(name,value) - เซ็ตค่าแอตทริบิวต์ในอิลิเมนต์
+- Object.attr(name) - อ่านค่าแอตทริบิวต์ในอิลิเมนต์

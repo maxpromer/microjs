@@ -23,3 +23,7 @@ Object.prototype.click = function(fn) {
 	this.on("click", fn);
 	return this;
 }
+
+Object.prototype.serialize = function() {
+	return new FormData(this[0]);
+}

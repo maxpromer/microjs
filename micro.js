@@ -73,7 +73,3 @@ Object.prototype.attr = function(n,v) {
 	} else 
 		return this[0].getAttribute(n);
 }
-
-Object.prototype.serialize = function() {
-	return new FormData(this[0]);
-}
