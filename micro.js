@@ -99,4 +99,14 @@ Object.prototype.removeAttr = function(n) {
 	return this;
 }
 
+$.copySetting = function(defaultValue, settings) {
+	var settingsCopy = defaultValue;
+	for (var key in settings) {
+		if (settings.hasOwnProperty(key)) {
+			settingsCopy[key] = settings[key];
+		}
+	}
+	return settingsCopy;
+}
+
 microjs = true;

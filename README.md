@@ -28,7 +28,8 @@
 - Object.serialize() - ดึงข้อมูลออกมาจากทั้งฟอร์ม
 
 `micro.module.ajax.js` or `micro.module.ajax.mini.js`
-- $.ajax(method, url, data, completed, error, dataType)
-- $.post(url, data, completed, dataType)
-- $.get(url, completed, dataType)
-- $.json(url, completed)
+- $.ajax(url[, setting])
+- $.ajax(setting)
+- $.post(url, data, success, dataType)
+- $.get(url, success, dataType)
+- $.json(url, success)
