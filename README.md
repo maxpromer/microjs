@@ -4,6 +4,7 @@
 # API
 `micro.js` หรือ `micro.mini.js`
 - $(query) - CSS selectors
+- Object.find(query) - เลือกอิลิเมนต์ย่อย
 - Object.hide() - ซ่อนอิลิเมนต์
 - Object.show() - แสดงอิลิเมนต์
 - Object.css(property) - อ่านค่าสไตล์
